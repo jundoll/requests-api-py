@@ -8,9 +8,10 @@ $ pip install git+https://github.com/jundoll/requests-api-py.git
 
 ### Use (sample)
 ```python
-import requests-api as api
+import requests_api as request
+import asyncio
 
-# get a result of request URI
-request_uri = 'xxxxxx'
-response_dict = await request.get(request_url)
+# get a result of request URI (from https://sampleapis.com/)
+request_uri = 'https://api.sampleapis.com/coffee/hot'
+response_dict = asyncio.run(request.get(request_uri))
 ```

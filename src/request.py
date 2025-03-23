@@ -50,7 +50,8 @@ async def get(
     # execute
     for i in range(max_retries):
         await limiter.wait()
-        headers = {"User-Agent": urllib.parse.quote(user_agent)}
+        headers = {"User-Agent": urllib.parse.quote(user_agent),
+                   "Content-Type": "application/json"}
         req = request.Request(request_url, headers=headers)
         try:
             response = request.urlopen(req)
